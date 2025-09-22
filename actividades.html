@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Actividades | Explorando Boyacá</title>
+  <style>
+    :root {
+      --verde-oscuro: #23402a;
+      --verde-medio: #3d5a3a;
+      --verde-suave: #6e8c6a;
+      --verde-claro: #b6cbb2;
+      --verde-pastel: #e5f0e6;
+      --blanco: #f8f8f8;
+      --negro: #181818;
+    }
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, var(--verde-medio) 0%, var(--verde-suave) 100%);
+      color: var(--blanco);
+      min-height: 100vh;
+    }
+    .menu {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      display: flex;
+      gap: 30px;
+      font-weight: bold;
+      z-index: 3;
+    }
+    .menu a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      background-color: rgba(0, 0, 0, 0.2);
+      padding: 6px 12px;
+      border-radius: 5px;
+      transition: background 0.2s;
+    }
+    .menu a:hover,
+    .menu a.active {
+      background-color: rgba(255,255,255,0.2);
+      color: #fff;
+    }
+    .hero {
+      background-image: url('actividad.jpg');
+      background-size: cover;
+      background-position: center;
+      min-height: 65vh;
+      color: var(--negro);
+      position: relative;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .overlay {
+      background-color: rgba(35, 64, 42, 0.35);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    .content {
+      z-index: 2;
+      position: relative;
+      padding: 40px 20px 20px 20px;
+    }
+    .title {
+      font-size: 3em;
+      font-weight: 900;
+      background-color: rgba(60, 60, 60, 0.35); 
+      padding: 0.3em 1em;
+      border-radius: 10px;
+      color: white;
+      z-index: 2;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(35,64,42,0.10);
+    }
+    .section {
+      padding: 40px 20px;
+      text-align: center;
+      background-color: rgba(35,64,42,0.85); 
+      border-top: 1px solid var(--verde-suave);
+      margin: 0 auto;
+      max-width: 900px;
+      box-shadow: 0 4px 16px rgba(35,64,42,0.06);
+    }
+    .actividad {
+      background: linear-gradient(120deg, var(--verde-suave) 60%, var(--verde-medio) 100%);
+      border-radius: 12px;
+      margin: 30px auto;
+      padding: 24px 18px;
+      max-width: 700px;
+      box-shadow: 0 4px 16px rgba(35,64,42,0.10);
+      color: var(--blanco);
+      text-align: left;
+      border-left: 8px solid var(--verde-oscuro);
+    }
+    .actividad h3 {
+      margin-top: 0;
+      color: var(--verde-claro);
+    }
+    .actividad a {
+      color: var(--blanco);
+      background: var(--verde-oscuro);
+      padding: 6px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.2s;
+      border: none;
+      margin-top: 10px;
+      display: inline-block;
+    }
+    .actividad a:hover {
+      background: var(--verde-medio);
+    }
+    #btnIrMapa {
+      display: none !important;
+    }
+    @media (max-width: 700px) {
+      .title { font-size: 2em; }
+      .actividad { padding: 16px 6px; }
+      .section { padding: 20px 5px; }
+      .menu { right: 10px; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <img src="logo.png" alt="Logo Explorando Boyacá"
+    id="logoExplorando"
+    style="
+      position: fixed;
+      top: 18px;
+      left: 18px;
+      width: 80px;
+      height: auto;
+      z-index: 1001;
+      background: rgba(255,255,255,0.0);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      cursor: pointer;
+      pointer-events: auto;
+      transition: left 0.4s, right 0.4s;
+    ">
+  <div class="hero">
+    <div class="overlay"></div>
+    <div class="menu">
+      <a href="Inicio.html">INICIO</a>
+      <a href="provincias.html">PROVINCIAS</a>
+      <a href="evaluar.html">EVALUAR</a>
+    </div>
+    <div class="content">
+      <div class="title">ACTIVIDADES INTERACTIVAS</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="actividad">
+      <h3>1. Juego interactivo: Aventura en Boyacá</h3>
+      <p>Recorre el departamento de Boyacá resolviendo preguntas y retos sobre sus provincias, municipios y cultura.</p>
+      <a href="https://es.educaplay.com/juego/24539320-aventura_en_boyaca.html" target="_blank">Jugar ahora</a>
+    </div>
+    <div class="actividad">
+      <h3>2. Mapa interactivo de Boyacá</h3>
+      <p>Descubre la ubicación de cada provincia y municipio en el mapa interactivo.</p>
+      <a href="https://view.genially.com/688186b335a7826579bb3c65" target="_blank">Ver mapa</a>
+    </div>
+    <div class="actividad">
+      <h3>3. Sopa de letras: Tradiciones Boyacenses</h3>
+      <p>Encuentra palabras relacionadas con la cultura, gastronomía y geografía de Boyacá.</p>
+      <a href="https://es.educaplay.com/recursos-educativos/24539321-sopa_de_letras_boyaca.html" target="_blank">Jugar sopa de letras</a>
+    </div>
+    <div class="actividad">
+      <h3>4. Quiz: ¿Cuánto sabes de Boyacá?</h3>
+      <p>Pon a prueba tus conocimientos sobre la historia, geografía y costumbres del departamento.</p>
+      <a href="https://es.educaplay.com/recursos-educativos/24539322-quiz_boyaca.html" target="_blank">Realizar quiz</a>
+    </div>
+    <div class="actividad">
+      <h3>5. Video educativo</h3>
+      <p>Aprende más sobre Boyacá viendo este video recomendado.</p>
+      <a href="https://www.youtube.com/watch?v=6wKQpQnF7lA" target="_blank">Ver video</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('logoExplorando').onclick = function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  </script>
+</body>
+</html>
