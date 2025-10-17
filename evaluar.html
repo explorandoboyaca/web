@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Evaluar · Explorando Boyacá</title>
+  <style>
+    :root{
+    
+      --azul-fondo-1: #5b94b1;   
+      --azul-fondo-2: #467b93;   
+      --azul-card:     #2b5566;  
+      --azul-oscuro:   #0b3240;  
+      --texto-claro:   #ffffff;  
+      --texto-muted:   rgba(255,255,255,0.88);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0;font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;}
+    html,body{height:100%; background: linear-gradient(to bottom, var(--azul-fondo-1), var(--azul-fondo-2)); color:var(--texto-claro);}
+
+
+    #logoExplorando{
+      position: fixed;
+      top:18px;
+      left:18px;
+      width:80px;
+      height:auto;
+      z-index:1001;
+      cursor:pointer;
+      background: transparent;
+      border-radius:8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    }
+
+    .menu{
+      position: absolute;
+      top:20px;
+      right:40px;
+      display:flex;
+      gap:18px;
+      font-weight:bold;
+      z-index:1001;
+    }
+    .menu a{
+      color: var(--texto-claro);
+      text-decoration:none;
+      font-size:14px;
+      background-color: rgba(3,41,65,0.9);
+      padding:6px 12px;
+      border-radius:6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+    }
+
+    .hero{
+      min-height:52vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      background-image: url("villa-de-leyva.jpg");
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+    .overlay{
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(4,25,34,0.28) 0%, rgba(4,25,34,0.40) 100%);
+      z-index:0;
+    }
+    .title{
+      position:relative;
+      z-index:1;
+      text-align:center;
+      padding:32px 22px;
+      border-radius:12px;
+    
+      background-color: rgba(60,60,60,0.35);
+      color: var(--texto-claro);
+      max-width:940px;
+      box-shadow: 0 6px 18px rgba(2,20,30,0.12);
+      border: none;
+    }
+    .title h1{ font-size:2.2rem; letter-spacing:1px; margin-bottom:8px; }
+    .title p{ color:var(--texto-muted); font-size:1rem; line-height:1.45; }
+
+    .container{ max-width:1100px; margin:28px auto; padding:0 18px; }
+
+    .card{
+      background: var(--azul-card);
+      color: var(--texto-claro);
+      border-radius:12px;
+      padding:18px;
+      box-shadow: 0 6px 20px rgba(2,20,30,0.22);
+      margin-bottom:18px;
+      border: 1px solid rgba(0,0,0,0.14);
+    }
+
+    .btn{
+      background: var(--azul-oscuro);
+      color: var(--texto-claro);
+      border:none;
+      padding:10px 16px;
+      border-radius:10px;
+      cursor:pointer;
+      font-weight:700;
+    }
+    .btn.secondary{ background: rgba(3,65,96,0.95); }
+    .row{ display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
+
+    form label{ display:block; margin:12px 0 6px; font-weight:600; color:var(--texto-claro); }
+    select, input[type="text"], textarea{
+      width:100%; max-width:720px; padding:10px 12px; border-radius:8px;
+      border:1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.04); color:var(--texto-claro);
+    }
+
+    footer{
+      background: var(--azul-oscuro);
+      color:var(--texto-muted);
+      text-align:center;
+      padding:20px 12px;
+      margin-top:28px;
+      border-top:1px solid rgba(0,0,0,0.18);
+    }
+
+    @media (max-width:720px){
+      .title h1{ font-size:1.6rem; }
+      .menu{ right:18px; gap:12px; top:14px; }
+      #logoExplorando{ width:64px; top:12px; left:12px; }
+    }
+  </style>
+</head>
+<body>
+  <img src="logo.png" alt="Logo Explorando Boyacá" id="logoExplorando">
+
+  <div class="hero" role="banner">
+    <div class="overlay" aria-hidden="true"></div>
+
+    <div class="menu" aria-label="Navegación principal">
+      <a href="Inicio.html">INICIO</a>
+      <a href="provincias.html">PROVINCIAS</a>
+      <a href="actividades.html">ACTIVIDADES</a>
+    </div>
+
+    <div class="title" role="region" aria-labelledby="titulo-evaluar">
+      <h1 id="titulo-evaluar">EVALUAR</h1>
+      <p>Responde el siguiente cuestionario de conocimiento y satisfacción</p>
+    </div>
+  </div>
+
+  <main class="container" role="main">
+    <div class="card" id="intro-evaluar">
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;">
+        <div>
+          <h2 style="margin-bottom:6px;">Instrucciones</h2>
+          <p style="margin-bottom:0.25rem; color:var(--texto-muted);">Lee cada pregunta con atención. Responde con sinceridad para evaluar conocimientos y nivel de satisfacción.</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div style="width:97%; max-width:1100px; margin:14px auto; display:flex; justify-content:center;">
+      <div formsappId="68dabc7c2af86700025788cb" style="width:100%;"></div>
+      <script src="https://forms.app/cdn/embed.js" type="text/javascript" async defer onload="new formsapp('68dabc7c2af86700025788cb', 'standard', {'width':'100%','height':'600px'}, 'https://17zz1c63.forms.app');"></script>
+    </div>
+
+    
+  <script>
+   
+    const btnVolver = document.getElementById('volverInicio');
+    if (btnVolver) {
+      btnVolver.addEventListener('click', function(){
+        location.href = 'Inicio.html';
+      });
+    }
+
+    
+    const logo = document.getElementById('logoExplorando');
+    if (logo) {
+      logo.addEventListener('click', function(e){
+        e.preventDefault();
+        const menu = document.querySelector('.menu');
+        if (menu) {
+          const y = menu.getBoundingClientRect().top + window.scrollY - 8;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        } else {
+          const target = document.getElementById('titulo-evaluar');
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>
